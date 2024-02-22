@@ -1,0 +1,656 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D4CADC2A2B8706AA00B210A1 /* CostaAppv2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CADC292B8706AA00B210A1 /* CostaAppv2App.swift */; };
+		D4CADC2C2B8706AA00B210A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CADC2B2B8706AA00B210A1 /* ContentView.swift */; };
+		D4CADC2E2B8706AC00B210A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4CADC2D2B8706AC00B210A1 /* Assets.xcassets */; };
+		D4CADC312B8706AC00B210A1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4CADC302B8706AC00B210A1 /* Preview Assets.xcassets */; };
+		D4CADC3B2B8706AC00B210A1 /* CostaAppv2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CADC3A2B8706AC00B210A1 /* CostaAppv2Tests.swift */; };
+		D4CADC452B8706AC00B210A1 /* CostaAppv2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CADC442B8706AC00B210A1 /* CostaAppv2UITests.swift */; };
+		D4CADC472B8706AC00B210A1 /* CostaAppv2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CADC462B8706AC00B210A1 /* CostaAppv2UITestsLaunchTests.swift */; };
+		D4CADC562B87081400B210A1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4CADC552B87081400B210A1 /* GoogleService-Info.plist */; };
+		D4CADC592B8708E500B210A1 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = D4CADC582B8708E500B210A1 /* FirebaseAnalytics */; };
+		D4CADC5B2B8708E500B210A1 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D4CADC5A2B8708E500B210A1 /* FirebaseAnalyticsSwift */; };
+		D4CADC5D2B8708E500B210A1 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = D4CADC5C2B8708E500B210A1 /* FirebaseAuth */; };
+		D4CADC5F2B8708E500B210A1 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D4CADC5E2B8708E500B210A1 /* FirebaseFirestore */; };
+		D4CADC612B8708E500B210A1 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D4CADC602B8708E500B210A1 /* FirebaseFirestoreSwift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D4CADC372B8706AC00B210A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D4CADC1E2B8706AA00B210A1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D4CADC252B8706AA00B210A1;
+			remoteInfo = CostaAppv2;
+		};
+		D4CADC412B8706AC00B210A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D4CADC1E2B8706AA00B210A1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D4CADC252B8706AA00B210A1;
+			remoteInfo = CostaAppv2;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D4CADC262B8706AA00B210A1 /* CostaAppv2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CostaAppv2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4CADC292B8706AA00B210A1 /* CostaAppv2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostaAppv2App.swift; sourceTree = "<group>"; };
+		D4CADC2B2B8706AA00B210A1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D4CADC2D2B8706AC00B210A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D4CADC302B8706AC00B210A1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D4CADC362B8706AC00B210A1 /* CostaAppv2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CostaAppv2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4CADC3A2B8706AC00B210A1 /* CostaAppv2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostaAppv2Tests.swift; sourceTree = "<group>"; };
+		D4CADC402B8706AC00B210A1 /* CostaAppv2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CostaAppv2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4CADC442B8706AC00B210A1 /* CostaAppv2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostaAppv2UITests.swift; sourceTree = "<group>"; };
+		D4CADC462B8706AC00B210A1 /* CostaAppv2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostaAppv2UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D4CADC552B87081400B210A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D4CADC232B8706AA00B210A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4CADC612B8708E500B210A1 /* FirebaseFirestoreSwift in Frameworks */,
+				D4CADC5B2B8708E500B210A1 /* FirebaseAnalyticsSwift in Frameworks */,
+				D4CADC5F2B8708E500B210A1 /* FirebaseFirestore in Frameworks */,
+				D4CADC5D2B8708E500B210A1 /* FirebaseAuth in Frameworks */,
+				D4CADC592B8708E500B210A1 /* FirebaseAnalytics in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4CADC332B8706AC00B210A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4CADC3D2B8706AC00B210A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D4CADC1D2B8706AA00B210A1 = {
+			isa = PBXGroup;
+			children = (
+				D4CADC282B8706AA00B210A1 /* CostaAppv2 */,
+				D4CADC392B8706AC00B210A1 /* CostaAppv2Tests */,
+				D4CADC432B8706AC00B210A1 /* CostaAppv2UITests */,
+				D4CADC272B8706AA00B210A1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D4CADC272B8706AA00B210A1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D4CADC262B8706AA00B210A1 /* CostaAppv2.app */,
+				D4CADC362B8706AC00B210A1 /* CostaAppv2Tests.xctest */,
+				D4CADC402B8706AC00B210A1 /* CostaAppv2UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D4CADC282B8706AA00B210A1 /* CostaAppv2 */ = {
+			isa = PBXGroup;
+			children = (
+				D4CADC552B87081400B210A1 /* GoogleService-Info.plist */,
+				D4CADC292B8706AA00B210A1 /* CostaAppv2App.swift */,
+				D4CADC2B2B8706AA00B210A1 /* ContentView.swift */,
+				D4CADC2D2B8706AC00B210A1 /* Assets.xcassets */,
+				D4CADC2F2B8706AC00B210A1 /* Preview Content */,
+			);
+			path = CostaAppv2;
+			sourceTree = "<group>";
+		};
+		D4CADC2F2B8706AC00B210A1 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				D4CADC302B8706AC00B210A1 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D4CADC392B8706AC00B210A1 /* CostaAppv2Tests */ = {
+			isa = PBXGroup;
+			children = (
+				D4CADC3A2B8706AC00B210A1 /* CostaAppv2Tests.swift */,
+			);
+			path = CostaAppv2Tests;
+			sourceTree = "<group>";
+		};
+		D4CADC432B8706AC00B210A1 /* CostaAppv2UITests */ = {
+			isa = PBXGroup;
+			children = (
+				D4CADC442B8706AC00B210A1 /* CostaAppv2UITests.swift */,
+				D4CADC462B8706AC00B210A1 /* CostaAppv2UITestsLaunchTests.swift */,
+			);
+			path = CostaAppv2UITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D4CADC252B8706AA00B210A1 /* CostaAppv2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4CADC4A2B8706AC00B210A1 /* Build configuration list for PBXNativeTarget "CostaAppv2" */;
+			buildPhases = (
+				D4CADC222B8706AA00B210A1 /* Sources */,
+				D4CADC232B8706AA00B210A1 /* Frameworks */,
+				D4CADC242B8706AA00B210A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CostaAppv2;
+			packageProductDependencies = (
+				D4CADC582B8708E500B210A1 /* FirebaseAnalytics */,
+				D4CADC5A2B8708E500B210A1 /* FirebaseAnalyticsSwift */,
+				D4CADC5C2B8708E500B210A1 /* FirebaseAuth */,
+				D4CADC5E2B8708E500B210A1 /* FirebaseFirestore */,
+				D4CADC602B8708E500B210A1 /* FirebaseFirestoreSwift */,
+			);
+			productName = CostaAppv2;
+			productReference = D4CADC262B8706AA00B210A1 /* CostaAppv2.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D4CADC352B8706AC00B210A1 /* CostaAppv2Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4CADC4D2B8706AC00B210A1 /* Build configuration list for PBXNativeTarget "CostaAppv2Tests" */;
+			buildPhases = (
+				D4CADC322B8706AC00B210A1 /* Sources */,
+				D4CADC332B8706AC00B210A1 /* Frameworks */,
+				D4CADC342B8706AC00B210A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D4CADC382B8706AC00B210A1 /* PBXTargetDependency */,
+			);
+			name = CostaAppv2Tests;
+			productName = CostaAppv2Tests;
+			productReference = D4CADC362B8706AC00B210A1 /* CostaAppv2Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D4CADC3F2B8706AC00B210A1 /* CostaAppv2UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4CADC502B8706AC00B210A1 /* Build configuration list for PBXNativeTarget "CostaAppv2UITests" */;
+			buildPhases = (
+				D4CADC3C2B8706AC00B210A1 /* Sources */,
+				D4CADC3D2B8706AC00B210A1 /* Frameworks */,
+				D4CADC3E2B8706AC00B210A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D4CADC422B8706AC00B210A1 /* PBXTargetDependency */,
+			);
+			name = CostaAppv2UITests;
+			productName = CostaAppv2UITests;
+			productReference = D4CADC402B8706AC00B210A1 /* CostaAppv2UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D4CADC1E2B8706AA00B210A1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					D4CADC252B8706AA00B210A1 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+					D4CADC352B8706AC00B210A1 = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = D4CADC252B8706AA00B210A1;
+					};
+					D4CADC3F2B8706AC00B210A1 = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = D4CADC252B8706AA00B210A1;
+					};
+				};
+			};
+			buildConfigurationList = D4CADC212B8706AA00B210A1 /* Build configuration list for PBXProject "CostaAppv2" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D4CADC1D2B8706AA00B210A1;
+			packageReferences = (
+				D4CADC572B8708E400B210A1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			productRefGroup = D4CADC272B8706AA00B210A1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D4CADC252B8706AA00B210A1 /* CostaAppv2 */,
+				D4CADC352B8706AC00B210A1 /* CostaAppv2Tests */,
+				D4CADC3F2B8706AC00B210A1 /* CostaAppv2UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D4CADC242B8706AA00B210A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4CADC312B8706AC00B210A1 /* Preview Assets.xcassets in Resources */,
+				D4CADC2E2B8706AC00B210A1 /* Assets.xcassets in Resources */,
+				D4CADC562B87081400B210A1 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4CADC342B8706AC00B210A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4CADC3E2B8706AC00B210A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D4CADC222B8706AA00B210A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4CADC2C2B8706AA00B210A1 /* ContentView.swift in Sources */,
+				D4CADC2A2B8706AA00B210A1 /* CostaAppv2App.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4CADC322B8706AC00B210A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4CADC3B2B8706AC00B210A1 /* CostaAppv2Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4CADC3C2B8706AC00B210A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4CADC452B8706AC00B210A1 /* CostaAppv2UITests.swift in Sources */,
+				D4CADC472B8706AC00B210A1 /* CostaAppv2UITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D4CADC382B8706AC00B210A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D4CADC252B8706AA00B210A1 /* CostaAppv2 */;
+			targetProxy = D4CADC372B8706AC00B210A1 /* PBXContainerItemProxy */;
+		};
+		D4CADC422B8706AC00B210A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D4CADC252B8706AA00B210A1 /* CostaAppv2 */;
+			targetProxy = D4CADC412B8706AC00B210A1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D4CADC482B8706AC00B210A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D4CADC492B8706AC00B210A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D4CADC4B2B8706AC00B210A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CostaAppv2/Preview Content\"";
+				DEVELOPMENT_TEAM = 4MAHASBFHF;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = HCD.CostaAppv2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D4CADC4C2B8706AC00B210A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CostaAppv2/Preview Content\"";
+				DEVELOPMENT_TEAM = 4MAHASBFHF;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = HCD.CostaAppv2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D4CADC4E2B8706AC00B210A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4MAHASBFHF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = HCD.CostaAppv2Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CostaAppv2.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CostaAppv2";
+			};
+			name = Debug;
+		};
+		D4CADC4F2B8706AC00B210A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4MAHASBFHF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = HCD.CostaAppv2Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CostaAppv2.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CostaAppv2";
+			};
+			name = Release;
+		};
+		D4CADC512B8706AC00B210A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4MAHASBFHF;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = HCD.CostaAppv2UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CostaAppv2;
+			};
+			name = Debug;
+		};
+		D4CADC522B8706AC00B210A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4MAHASBFHF;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = HCD.CostaAppv2UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CostaAppv2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D4CADC212B8706AA00B210A1 /* Build configuration list for PBXProject "CostaAppv2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4CADC482B8706AC00B210A1 /* Debug */,
+				D4CADC492B8706AC00B210A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4CADC4A2B8706AC00B210A1 /* Build configuration list for PBXNativeTarget "CostaAppv2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4CADC4B2B8706AC00B210A1 /* Debug */,
+				D4CADC4C2B8706AC00B210A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4CADC4D2B8706AC00B210A1 /* Build configuration list for PBXNativeTarget "CostaAppv2Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4CADC4E2B8706AC00B210A1 /* Debug */,
+				D4CADC4F2B8706AC00B210A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4CADC502B8706AC00B210A1 /* Build configuration list for PBXNativeTarget "CostaAppv2UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4CADC512B8706AC00B210A1 /* Debug */,
+				D4CADC522B8706AC00B210A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D4CADC572B8708E400B210A1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.21.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D4CADC582B8708E500B210A1 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D4CADC572B8708E400B210A1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		D4CADC5A2B8708E500B210A1 /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D4CADC572B8708E400B210A1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		D4CADC5C2B8708E500B210A1 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D4CADC572B8708E400B210A1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		D4CADC5E2B8708E500B210A1 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D4CADC572B8708E400B210A1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		D4CADC602B8708E500B210A1 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D4CADC572B8708E400B210A1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = D4CADC1E2B8706AA00B210A1 /* Project object */;
+}
