@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D40F46002B87101F0043A4D7 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40F45FF2B87101F0043A4D7 /* WelcomeView.swift */; };
+		D40F46022B8710540043A4D7 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40F46012B8710540043A4D7 /* ForgotPasswordView.swift */; };
+		D40F46082B8712190043A4D7 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40F46072B8712190043A4D7 /* ProfileView.swift */; };
+		D40F460A2B8712340043A4D7 /* Checklist.md in Resources */ = {isa = PBXBuildFile; fileRef = D40F46092B8712340043A4D7 /* Checklist.md */; };
+		D40F460E2B8716490043A4D7 /* AnnouncementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40F460D2B8716490043A4D7 /* AnnouncementView.swift */; };
+		D40F46102B8716510043A4D7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40F460F2B8716510043A4D7 /* HomeView.swift */; };
+		D40F46122B8716580043A4D7 /* HomepageOGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40F46112B8716580043A4D7 /* HomepageOGView.swift */; };
+		D40F46142B8716600043A4D7 /* ImagePickerProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40F46132B8716600043A4D7 /* ImagePickerProfileView.swift */; };
+		D40F46162B87168C0043A4D7 /* ClubsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40F46152B87168C0043A4D7 /* ClubsView.swift */; };
 		D4CADC2A2B8706AA00B210A1 /* CostaAppv2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CADC292B8706AA00B210A1 /* CostaAppv2App.swift */; };
 		D4CADC2C2B8706AA00B210A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CADC2B2B8706AA00B210A1 /* ContentView.swift */; };
 		D4CADC2E2B8706AC00B210A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4CADC2D2B8706AC00B210A1 /* Assets.xcassets */; };
@@ -20,6 +29,9 @@
 		D4CADC5D2B8708E500B210A1 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = D4CADC5C2B8708E500B210A1 /* FirebaseAuth */; };
 		D4CADC5F2B8708E500B210A1 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D4CADC5E2B8708E500B210A1 /* FirebaseFirestore */; };
 		D4CADC612B8708E500B210A1 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D4CADC602B8708E500B210A1 /* FirebaseFirestoreSwift */; };
+		D4EAFEAB2B87E1DD0016F103 /* Announcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EAFEAA2B87E1DD0016F103 /* Announcement.swift */; };
+		D4EAFEAD2B87E2110016F103 /* Club.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EAFEAC2B87E2110016F103 /* Club.swift */; };
+		D4EAFEAF2B87E2170016F103 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EAFEAE2B87E2170016F103 /* Schedule.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +52,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D40F45FF2B87101F0043A4D7 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		D40F46012B8710540043A4D7 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		D40F46072B8712190043A4D7 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		D40F46092B8712340043A4D7 /* Checklist.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Checklist.md; sourceTree = "<group>"; };
+		D40F460D2B8716490043A4D7 /* AnnouncementView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementView.swift; sourceTree = "<group>"; };
+		D40F460F2B8716510043A4D7 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		D40F46112B8716580043A4D7 /* HomepageOGView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomepageOGView.swift; sourceTree = "<group>"; };
+		D40F46132B8716600043A4D7 /* ImagePickerProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerProfileView.swift; sourceTree = "<group>"; };
+		D40F46152B87168C0043A4D7 /* ClubsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubsView.swift; sourceTree = "<group>"; };
 		D4CADC262B8706AA00B210A1 /* CostaAppv2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CostaAppv2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4CADC292B8706AA00B210A1 /* CostaAppv2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostaAppv2App.swift; sourceTree = "<group>"; };
 		D4CADC2B2B8706AA00B210A1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,6 +72,9 @@
 		D4CADC442B8706AC00B210A1 /* CostaAppv2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostaAppv2UITests.swift; sourceTree = "<group>"; };
 		D4CADC462B8706AC00B210A1 /* CostaAppv2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostaAppv2UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D4CADC552B87081400B210A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D4EAFEAA2B87E1DD0016F103 /* Announcement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Announcement.swift; sourceTree = "<group>"; };
+		D4EAFEAC2B87E2110016F103 /* Club.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Club.swift; sourceTree = "<group>"; };
+		D4EAFEAE2B87E2170016F103 /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +107,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D40F45FE2B87100C0043A4D7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D40F46132B8716600043A4D7 /* ImagePickerProfileView.swift */,
+				D40F46112B8716580043A4D7 /* HomepageOGView.swift */,
+				D40F460F2B8716510043A4D7 /* HomeView.swift */,
+				D40F460D2B8716490043A4D7 /* AnnouncementView.swift */,
+				D40F46072B8712190043A4D7 /* ProfileView.swift */,
+				D40F45FF2B87101F0043A4D7 /* WelcomeView.swift */,
+				D40F46012B8710540043A4D7 /* ForgotPasswordView.swift */,
+				D40F46152B87168C0043A4D7 /* ClubsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		D4CADC1D2B8706AA00B210A1 = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +145,9 @@
 		D4CADC282B8706AA00B210A1 /* CostaAppv2 */ = {
 			isa = PBXGroup;
 			children = (
+				D4EAFEA92B87E19F0016F103 /* Models */,
+				D40F46092B8712340043A4D7 /* Checklist.md */,
+				D40F45FE2B87100C0043A4D7 /* Views */,
 				D4CADC552B87081400B210A1 /* GoogleService-Info.plist */,
 				D4CADC292B8706AA00B210A1 /* CostaAppv2App.swift */,
 				D4CADC2B2B8706AA00B210A1 /* ContentView.swift */,
@@ -138,6 +180,16 @@
 				D4CADC462B8706AC00B210A1 /* CostaAppv2UITestsLaunchTests.swift */,
 			);
 			path = CostaAppv2UITests;
+			sourceTree = "<group>";
+		};
+		D4EAFEA92B87E19F0016F103 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D4EAFEAA2B87E1DD0016F103 /* Announcement.swift */,
+				D4EAFEAC2B87E2110016F103 /* Club.swift */,
+				D4EAFEAE2B87E2170016F103 /* Schedule.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4CADC312B8706AC00B210A1 /* Preview Assets.xcassets in Resources */,
+				D40F460A2B8712340043A4D7 /* Checklist.md in Resources */,
 				D4CADC2E2B8706AC00B210A1 /* Assets.xcassets in Resources */,
 				D4CADC562B87081400B210A1 /* GoogleService-Info.plist in Resources */,
 			);
@@ -281,7 +334,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4EAFEAB2B87E1DD0016F103 /* Announcement.swift in Sources */,
+				D40F46102B8716510043A4D7 /* HomeView.swift in Sources */,
+				D40F46022B8710540043A4D7 /* ForgotPasswordView.swift in Sources */,
+				D40F460E2B8716490043A4D7 /* AnnouncementView.swift in Sources */,
+				D40F46082B8712190043A4D7 /* ProfileView.swift in Sources */,
 				D4CADC2C2B8706AA00B210A1 /* ContentView.swift in Sources */,
+				D40F46002B87101F0043A4D7 /* WelcomeView.swift in Sources */,
+				D4EAFEAD2B87E2110016F103 /* Club.swift in Sources */,
+				D40F46162B87168C0043A4D7 /* ClubsView.swift in Sources */,
+				D40F46142B8716600043A4D7 /* ImagePickerProfileView.swift in Sources */,
+				D40F46122B8716580043A4D7 /* HomepageOGView.swift in Sources */,
+				D4EAFEAF2B87E2170016F103 /* Schedule.swift in Sources */,
 				D4CADC2A2B8706AA00B210A1 /* CostaAppv2App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
