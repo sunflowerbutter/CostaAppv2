@@ -145,10 +145,10 @@
 		D4CADC282B8706AA00B210A1 /* CostaAppv2 */ = {
 			isa = PBXGroup;
 			children = (
-				D4EAFEA92B87E19F0016F103 /* Models */,
-				D40F46092B8712340043A4D7 /* Checklist.md */,
-				D40F45FE2B87100C0043A4D7 /* Views */,
 				D4CADC552B87081400B210A1 /* GoogleService-Info.plist */,
+				D40F46092B8712340043A4D7 /* Checklist.md */,
+				D4EAFEA92B87E19F0016F103 /* Models */,
+				D40F45FE2B87100C0043A4D7 /* Views */,
 				D4CADC292B8706AA00B210A1 /* CostaAppv2App.swift */,
 				D4CADC2B2B8706AA00B210A1 /* ContentView.swift */,
 				D4CADC2D2B8706AC00B210A1 /* Assets.xcassets */,

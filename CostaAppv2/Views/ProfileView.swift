@@ -1,32 +1,6 @@
 import SwiftUI
 
 struct ProfileView: View {
-    var bellSchedules: [BellSchedule] = [
-        BellSchedule(description: "Period 0", startTime: "7:30 AM", endTime: "8:25 AM", length: "55 min"),
-        BellSchedule(description: "Period 1", startTime: "8:30 AM", endTime: "9:25 AM", length: "55 min"),
-        BellSchedule(description: "Period 2", startTime: "9:31 AM", endTime: "10:32 AM", length: "61 min"),
-        BellSchedule(description: "Break", startTime: "10:32 AM", endTime: "10:45 AM", length: "13 min"),
-        BellSchedule(description: "Period 3", startTime: "10:51 AM", endTime: "11:46 AM", length: "55 min"),
-        BellSchedule(description: "Period 4", startTime: "11:52 AM", endTime: "12:47 PM", length: "55 min"),
-        BellSchedule(description: "Lunch", startTime: "12:47 PM", endTime: "1:17 PM", length: "30 min"),
-        BellSchedule(description: "Period 5", startTime: "1:23 PM", endTime: "2:18 PM", length: "55 min"),
-        BellSchedule(description: "Period 6", startTime: "2:24 PM", endTime: "3:19 PM", length: "55 min")
-    ]
-    var officeHoursSchedules: [BellSchedule] = [
-        BellSchedule(description: "Period 0", startTime: "7:30 AM", endTime: "8:25 AM", length: "55 min"),
-        BellSchedule(description: "Period 1", startTime: "8:30 AM", endTime: "9:18 AM", length: "48 min"),
-        BellSchedule(description: "Period 2 HR", startTime: "9:24 AM", endTime: "10:23 AM", length: "48 min"),
-        BellSchedule(description: "Office Hours", startTime: "10:23 AM", endTime: "11:13 AM", length: "50 min"),
-        BellSchedule(description: "Period 3", startTime: "11:19 AM", endTime: "12:07 PM", length: "48 min"),
-        BellSchedule(description: "Period 4", startTime: "12:13 PM", endTime: "1:01 PM", length: "48 min"),
-        BellSchedule(description: "Lunch", startTime: "1:02 PM", endTime: "1:31 PM", length: "30 min"),
-        BellSchedule(description: "Period 5", startTime: "1:37 PM", endTime: "2:25 PM", length: "48 min"),
-        BellSchedule(description: "Period 6", startTime: "2:31 PM", endTime: "3:19 PM", length: "48 min")
-    ]
-    
-    
-    // katy perry
-    
     @State private var currentDate = Date()
     @State private var isImagePickerPresented = false
     @State private var profileImage: Image?
@@ -41,11 +15,12 @@ struct ProfileView: View {
         return dateFormatter.string(from: currentDate).lowercased()
     }
     
-    var currentSchedule: [BellSchedule] {
+    var currentSchedule: BellSchedule {
+        let allSchedules = getSchedules()
         if currentDayOfWeek == "tuesday" || currentDayOfWeek == "thursday" {
-            return officeHoursSchedules
+            return allSchedules["Office Hours"]!
         } else {
-            return bellSchedules
+            return allSchedules["Regular"]!
         }
     }
     
@@ -99,7 +74,7 @@ struct ProfileView: View {
                 Text("Grade: 11")
                 Text("Email: example@email.com")
                 
-                Spacer(minLength: 350) // Adjust as necessary
+                //Spacer(minLength: 350) // Adjust as necessary
                 
                 // Bell Schedule Display
                 VStack(spacing: 15) {
@@ -107,8 +82,8 @@ struct ProfileView: View {
                         .font(.headline)
                         .padding(.vertical)
                     
-                    ForEach(currentSchedule) { schedule in
-                        scheduleRow(schedule: schedule)
+                    ForEach(currentSchedule.getArray()) { period in
+                        scheduleRow(period: period)
                     }
                 }
                 .padding(.top, 20)
@@ -123,8 +98,8 @@ struct ProfileView: View {
             ImagePicker(image: self.$inputImage)
         }
     }
-
-
+    
+    
     
     func loadImage() {
         if let inputImage = inputImage {
@@ -137,165 +112,75 @@ struct ProfileView: View {
         // For now, return a placeholder.
         return "Placeholder"
     }
-
-
     
+    
+    
+    
+    func scheduleRow(period: Period) -> some View {
+        HStack {
+            Text(period.description)
+                .lineLimit(1)
+                .frame(width: 80, alignment: .leading)
+                .font(.system(size: 12))
             
-            func scheduleRow(schedule: BellSchedule) -> some View {
-                HStack {
-                    Text(schedule.description)
-                        .lineLimit(1)
-                        .frame(width: 80, alignment: .leading)
-                        .font(.system(size: 12))
-                    
-                    HStack {
-                        Text(schedule.startTime)
-                            .lineLimit(1)
-                            .frame(width: 60, alignment: .trailing)
-                            .font(.system(size: 12))
-                        Text("-")
-                            .lineLimit(1)
-                            .frame(width: 10, alignment: .center)
-                            .font(.system(size: 12))
-                        Text(schedule.endTime)
-                            .lineLimit(1)
-                            .frame(width: 60, alignment: .leading)
-                            .font(.system(size: 12))
-                    }
-                    
-                    if isTimeNow(in: schedule) {
-                        Text("Time Left: \(timeLeft(for: schedule))")
-                            .foregroundColor(.red)
-                            .lineLimit(1)
-                            .frame(minWidth: 100, alignment: .trailing)
-                            .font(.system(size: 12))
-                    } else {
-                        Text("Time Left: N/A")
-                            .foregroundColor(.gray)
-                            .lineLimit(1)
-                            .frame(width: 90, alignment: .trailing)
-                            .font(.system(size: 12))
-                            .minimumScaleFactor(0.5)
-
-                    }
-                }
-                .padding(.horizontal, 5)
-                .background(isTimeNow(in: schedule) ? Color.yellow.opacity(0.3) : Color.clear) // Highlight logic
+            HStack {
+                Text(period.startTime)
+                    .lineLimit(1)
+                    .frame(width: 60, alignment: .trailing)
+                    .font(.system(size: 12))
+                Text("-")
+                    .lineLimit(1)
+                    .frame(width: 10, alignment: .center)
+                    .font(.system(size: 12))
+                Text(period.endTime)
+                    .lineLimit(1)
+                    .frame(width: 60, alignment: .leading)
+                    .font(.system(size: 12))
             }
+            checkTimeLeft(period: period)
             
-            
-            
-    func isTimeNow(in schedule: BellSchedule) -> Bool {
-        guard let startTime = schedule.startTimeDate,
-              let endTime = schedule.endTimeDate else {
-            return false
         }
-        
+        .padding(.horizontal, 5)
+        //.background(isTimeNow(in: schedule) ? Color.yellow.opacity(0.3) : Color.clear) // Highlight logic
+    }
+    
+    func checkTimeLeft(period: Period) -> Text{
+        let startTime = period.startTimeDate
+        let endTime = period.endTimeDate
         let currentComponents = Calendar.current.dateComponents([.hour, .minute], from: currentDate)
         let startComponents = Calendar.current.dateComponents([.hour, .minute], from: startTime)
         let endComponents = Calendar.current.dateComponents([.hour, .minute], from: endTime)
+        let currentMinutes = currentComponents.minute! + (currentComponents.hour!*60)
+        let startMinutes = startComponents.minute! + (startComponents.hour!*60)
+        let endMinutes = endComponents.minute! + (endComponents.hour!*60)
         
-        if let currentHour = currentComponents.hour, let currentMinute = currentComponents.minute,
-           let startHour = startComponents.hour, let startMinute = startComponents.minute,
-           let endHour = endComponents.hour, let endMinute = endComponents.minute {
-            if currentHour == startHour {
-                return currentMinute >= startMinute
-            } else if currentHour == endHour {
-                return currentMinute <= endMinute
-            } else {
-                return currentHour > startHour && currentHour < endHour
-            }
+        if currentMinutes>endMinutes{
+            return Text("Ended")
+                .foregroundColor(.gray)
+                .lineLimit(1)
+                .frame(width: 90, alignment: .trailing)
+                .font(.system(size: 12))
+                .minimumScaleFactor(0.5) as! Text
         }
-        
-        return false
-    }
-
-
-    func timeLeft(for schedule: BellSchedule) -> String {
-        guard let endTime = schedule.endTimeDate else {
-            return "N/A"
+        else if currentMinutes>startMinutes && currentMinutes<endMinutes{
+            return Text("Time Left: \(endMinutes-currentMinutes)m")
+                .foregroundColor(.red)
+                .lineLimit(1)
+                .frame(minWidth: 100, alignment: .trailing)
+                .font(.system(size: 12)) as! Text
         }
-        
-        if currentDate > endTime {
-            return "Ended"
-        } else if currentDate < schedule.startTimeDate! {
-            return "Upcoming"
-        } else {
-            let components = Calendar.current.dateComponents([.minute], from: currentDate, to: endTime)
-            return "\(components.minute ?? 0)m"
+        else{
+            return Text("Upcoming")
+                .foregroundColor(.gray)
+                .lineLimit(1)
+                .frame(width: 90, alignment: .trailing)
+                .font(.system(size: 12))
+                .minimumScaleFactor(0.5) as! Text
         }
     }
-
-
-
-
+     
     
-    struct ImagePicker: UIViewControllerRepresentable {
-        @Binding var image: UIImage?
-        @Environment(\.presentationMode) var presentationMode
-
-        class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-            var parent: ImagePicker
-
-            init(_ parent: ImagePicker) {
-                self.parent = parent
-            }
-
-            func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-                if let uiImage = info[.originalImage] as? UIImage {
-                    parent.image = uiImage
-                }
-                parent.presentationMode.wrappedValue.dismiss()
-            }
-        }
-
-        func makeCoordinator() -> Coordinator {
-            Coordinator(self)
-        }
-
-        func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
-            let picker = UIImagePickerController()
-            picker.delegate = context.coordinator
-            return picker
-        }
-
-        func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<ImagePicker>) {
-        }
-    }
-
-
-    
-        
-        
-        
-        
-        struct BellSchedule: Identifiable {
-            var id = UUID()
-            var description: String
-            var startTime: String
-            var endTime: String
-            var length: String
-            
-            var startTimeDate: Date? {
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "h:mm a"
-                let date = dateFormatter.date(from: startTime)
-                return date
-            }
-            
-            var endTimeDate: Date? {
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "h:mm a"
-                let date = dateFormatter.date(from: endTime)
-                return date
-            }
-            
-            
-           
-            }
-    struct ProfileView_Previews: PreviewProvider {
-        static var previews: some View {
-            ProfileView()
-        }
-        }
+}
+#Preview {
+    ProfileView()
 }

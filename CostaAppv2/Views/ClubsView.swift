@@ -14,7 +14,6 @@ struct CategorySelectionView: View {
     @Binding var selectedCategory: String?
     @Binding var showingCategorySelection: Bool
 
-
     var categories: [String]
     
     var body: some View {
@@ -50,7 +49,7 @@ struct ExpandableClubView: View {
     var club: Club
     
     var isFollowed: Bool {
-        followedClubs.contains(club.id)
+        followedClubs.contains(club.id!)
     }
     
     var body: some View {
@@ -74,7 +73,7 @@ struct ExpandableClubView: View {
                         if isFollowed {
                             followedClubs.removeAll { $0 == club.id }
                         } else {
-                            followedClubs.append(club.id)
+                            followedClubs.append(club.id!)
                         }
                     }
                 }) {
@@ -118,14 +117,12 @@ struct ClubsView: View {
     @State private var showingCategorySelection = false
 
 
-
-
     var filteredClubs: [Club] {
             var result = clubs
 
 
             if tabSelection == "Following" {
-                result = result.filter { followedClubs.contains($0.id) }
+                result = result.filter { followedClubs.contains($0.id!) }
             } else {
                 if !searchText.isEmpty {
                     result = result.filter { $0.name.lowercased().contains(searchText.lowercased()) }
@@ -215,7 +212,6 @@ struct ClubsView: View {
         func fetchClubs() {
             let db = Firestore.firestore()
 
-
             db.collection("Clubs").getDocuments { (querySnapshot, err) in
                 if let err = err {
                     print("Error getting documents: \(err)")
@@ -248,9 +244,6 @@ struct ClubsView: View {
             }
         }
     }
-
-
-
 
 
 
