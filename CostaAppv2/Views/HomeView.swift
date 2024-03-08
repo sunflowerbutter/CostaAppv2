@@ -27,7 +27,7 @@ func checkAdmin() -> Bool{
     return checkAdmin
 }
 
-func fetchClubs(){
+/*func fetchClubs(){
     let db = Firestore.firestore()
     Task{
         do{
@@ -39,7 +39,7 @@ func fetchClubs(){
         }
         
     }
-}
+}*/
 
 struct HomeView: View {
     @StateObject var announcementManager = AnnouncementManager()

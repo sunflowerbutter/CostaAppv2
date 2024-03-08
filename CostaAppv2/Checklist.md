@@ -9,6 +9,7 @@ to do
 - barcode functionality - check how my id scans , incorporate w spreadsheet braskin gave
 - ui
     - behance, dribble
+    -https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.natesdesign.com%2Fportfolio-item%2Fclass-schedule%2F&psig=AOvVaw1dxvtEL5MOl55dgPYUcSQP&ust=1710013170741000&source=images&cd=vfe&opi=89978449&ved=0CBEQjhxqFwoTCMjp1dC15YQDFQAAAAAdAAAAABAY
 
 done
 - fixed time left in schedules

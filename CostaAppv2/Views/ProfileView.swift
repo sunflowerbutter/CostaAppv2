@@ -26,7 +26,7 @@ struct ProfileView: View {
     
     var currentScheduleTitle: String {
         if currentDayOfWeek == "tuesday" || currentDayOfWeek == "thursday" {
-            return "Office Hours Schedule (Tuesday/Thursday with Homeroom)"
+            return "Office Hours Schedule\n(Tuesday/Thursday with Homeroom)"
         } else {
             return "Regular Schedule (Monday/Wednesday/Friday)"
         }
@@ -34,8 +34,7 @@ struct ProfileView: View {
     
     var body: some View {
         ScrollView {
-            VStack(spacing: 20) {
-                
+            VStack(spacing: 15) {
                 // Profile Section
                 ZStack {
                     // Display the gray placeholder only if no image is set.
@@ -61,6 +60,7 @@ struct ProfileView: View {
                 }
                 .background(Circle().fill(Color.black.opacity(0.3)))
                 .clipShape(Circle())
+                .padding(.top, 20)
                 .onTapGesture {
                     self.isImagePickerPresented.toggle()
                 }
@@ -72,27 +72,28 @@ struct ProfileView: View {
                 // Additional details
                 Text("Student ID: 123456")
                 Text("Grade: 11")
-                Text("Email: example@email.com")
+                //Text("Email: example@email.com")
                 
-                //Spacer(minLength: 350) // Adjust as necessary
+                Spacer(minLength: 5) // Adjust as necessary
                 
                 // Bell Schedule Display
-                VStack(spacing: 15) {
+                VStack(spacing: 10) {
                     Text(currentScheduleTitle)
                         .font(.headline)
-                        .padding(.vertical)
+                        .padding(.horizontal)
+                        .multilineTextAlignment(.center)
                     
                     ForEach(currentSchedule.getArray()) { period in
                         scheduleRow(period: period)
                     }
                 }
-                .padding(.top, 20)
+                .padding()
                 .background(Color.white)
-                .cornerRadius(10)
-                .shadow(radius: 5)
+                //.cornerRadius(10)
+                //.shadow(radius: 5)
                 
             }
-            .padding()
+            
         }
         .sheet(isPresented: $isImagePickerPresented, onDismiss: loadImage) {
             ImagePicker(image: self.$inputImage)
@@ -115,14 +116,13 @@ struct ProfileView: View {
     
     
     
-    
     func scheduleRow(period: Period) -> some View {
         HStack {
             Text(period.description)
                 .lineLimit(1)
                 .frame(width: 80, alignment: .leading)
                 .font(.system(size: 12))
-            
+                        
             HStack {
                 Text(period.startTime)
                     .lineLimit(1)
@@ -136,15 +136,28 @@ struct ProfileView: View {
                     .lineLimit(1)
                     .frame(width: 60, alignment: .leading)
                     .font(.system(size: 12))
+                }
+                if checkTimeLeft(period:period).contains("Time Left"){
+                    Text(checkTimeLeft(period:period))
+                        .foregroundColor(.red)
+                        .lineLimit(1)
+                        .frame(minWidth: 100, alignment: .trailing)
+                        .font(.system(size: 12))
+                }
+                else{
+                    Text(checkTimeLeft(period:period))
+                        .foregroundColor(.gray)
+                        .lineLimit(1)
+                        .frame(width: 90, alignment: .trailing)
+                        .font(.system(size: 12))
+                        .minimumScaleFactor(0.5)
+                }
             }
-            checkTimeLeft(period: period)
-            
-        }
-        .padding(.horizontal, 5)
-        //.background(isTimeNow(in: schedule) ? Color.yellow.opacity(0.3) : Color.clear) // Highlight logic
+                .padding(.horizontal, 10)
+                //.background(isTimeNow(in: schedule) ? Color.yellow.opacity(0.3) : Color.clear) // Highlight logic
     }
     
-    func checkTimeLeft(period: Period) -> Text{
+    func checkTimeLeft(period: Period) -> String{
         let startTime = period.startTimeDate
         let endTime = period.endTimeDate
         let currentComponents = Calendar.current.dateComponents([.hour, .minute], from: currentDate)
@@ -155,27 +168,13 @@ struct ProfileView: View {
         let endMinutes = endComponents.minute! + (endComponents.hour!*60)
         
         if currentMinutes>endMinutes{
-            return Text("Ended")
-                .foregroundColor(.gray)
-                .lineLimit(1)
-                .frame(width: 90, alignment: .trailing)
-                .font(.system(size: 12))
-                .minimumScaleFactor(0.5) as! Text
+            return "Ended"
         }
         else if currentMinutes>startMinutes && currentMinutes<endMinutes{
-            return Text("Time Left: \(endMinutes-currentMinutes)m")
-                .foregroundColor(.red)
-                .lineLimit(1)
-                .frame(minWidth: 100, alignment: .trailing)
-                .font(.system(size: 12)) as! Text
+            return "Time Left: \(endMinutes-currentMinutes)m"
         }
         else{
-            return Text("Upcoming")
-                .foregroundColor(.gray)
-                .lineLimit(1)
-                .frame(width: 90, alignment: .trailing)
-                .font(.system(size: 12))
-                .minimumScaleFactor(0.5) as! Text
+            return "Upcoming"
         }
     }
      
