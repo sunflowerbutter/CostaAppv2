@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Announcement: Identifiable{
+struct Announcement: Codable, Identifiable{
     var id = UUID()
     var title: String
     var content: String
@@ -22,10 +22,7 @@ class AnnouncementManager: ObservableObject{
     //@Published used to automatically update the UI when the announcements are modified.
     @Published var announcements: [Announcement] = []
     
-    func addAnnouncement(title: String, content: String, clubid: String) {
-        let announcement = Announcement(title: title, content: content, clubid: clubid)
-        announcements.append(announcement)
-    }
+    
 }
 
 

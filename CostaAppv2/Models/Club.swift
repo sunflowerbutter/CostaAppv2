@@ -46,7 +46,7 @@ import Foundation
 struct Club: Identifiable {
     let id: String
     var advisor: String
-    var category: String
+    var categories: [String]
     var clubLeaders: String
     var day: String
     var leaderEmail: String?
@@ -55,3 +55,5 @@ struct Club: Identifiable {
     var newOrOld: String
     var isExpanded: Bool = false
 }
+
+//Community Service, Interest / Hobby, Charity, Culture, Sports, STEM, Art, Politics, Finance, Gaming, Literary, Animal, Music, Environment

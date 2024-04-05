@@ -11,57 +11,26 @@ import FirebaseCore
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-func checkAdmin() -> Bool{
-    var checkAdmin = false
-    Auth.auth().currentUser?.getIDTokenResult(completion: { (result,error) in
-        guard let admin = result?.claims["admin"] as? NSNumber else{
-            print("No custom claim of admin")
-            return
-        }
-        if admin.boolValue {
-            checkAdmin = true
-        } else{
-            print("User is not an admin")
-        }
-    })
-    return checkAdmin
-}
-
-/*func fetchClubs(){
-    let db = Firestore.firestore()
-    Task{
-        do{
-            let club = try await db.document("Clubs").getDocument(as: Club.self)
-            print("Fetched and decoded: \(club)")
-        }
-        catch{
-            print(error.localizedDescription)
-        }
-        
-    }
-}*/
 
 struct HomeView: View {
-    @StateObject var announcementManager = AnnouncementManager()
-    @State private var isAdmin = true
+    @StateObject var vm = AnnouncementViewModel()
     
     var body: some View {
         //admin view
-        if(isAdmin){
+        if(vm.isAdmin){
             NavigationStack {
-                List(announcementManager.announcements) { announcement in
+                List(vm.announcements) { announcement in
                     AnnouncementView(announcement: Announcement(title: "title", content: "content", clubid: "clubid"))
                 }
                 .navigationTitle("Announcements")
                 .navigationBarItems(trailing:
-                                        NavigationLink(destination: CreateAnnouncementView(announcementManager:announcementManager)){Text("Create")})
-                
+                                        NavigationLink(destination: CreateAnnouncementView(vm: vm)){Text("Create")})
             }
         }
         //normal view
         else{
             NavigationStack {
-                List(announcementManager.announcements) { announcement in
+                List($vm.announcements) { announcement in
                     AnnouncementView(announcement: Announcement(title: "title", content: "content", clubid: "clubid"))
                 }
                 .navigationTitle("Announcements")
@@ -71,30 +40,16 @@ struct HomeView: View {
 }
 
 struct CreateAnnouncementView: View {
-    @State private var allClubs:[Club] = []
-    @State private var searchText = ""
     @State private var selectedClub: String?
     @State private var showingDropdown = false
     @State private var isHovered: Bool = false
     
-    var allClubNames: [String] {
-        var names:[String] = []
-        for club in allClubs{
-            names.append(club.name)
-        }
-        return names
-    }
-    var filteredClubs: [String] {
-                searchText.isEmpty ? allClubNames : allClubNames.filter{
-            $0.localizedCaseInsensitiveContains(searchText)}
-    }
     @State private var title: String = ""
     @State private var content: String = ""
     @State private var clubid: String = ""
-    @StateObject var announcementManager: AnnouncementManager
+    @StateObject var vm: AnnouncementViewModel
     @Environment(\.presentationMode) var presentationMode
     
-
     var body: some View {
         VStack {
             TextField("Title", text: $title)
@@ -128,7 +83,7 @@ struct CreateAnnouncementView: View {
                 }
             if showingDropdown{
                 VStack(spacing:10){
-                    TextField("Search for a club", text: $searchText)
+                    TextField("Search for a club", text: $vm.searchText)
                         .padding(.horizontal,16)
                         .padding(.vertical,10)
                         .background(.white)
@@ -136,7 +91,7 @@ struct CreateAnnouncementView: View {
                         .shadow(color: .gray.opacity(0.4), radius: 4, x:0, y:2)
                         .foregroundColor(.primary)
                     
-                    List(filteredClubs, id:\.self){club in
+                    /*List(vm.filteredClubs, id:\.self){club in
                         Button(action: {
                             withAnimation{
                                 self.selectedClub = club
@@ -147,7 +102,7 @@ struct CreateAnnouncementView: View {
                                 .foregroundColor(.primary)
                         }
                     }
-                    .frame(maxHeight:150)
+                    .frame(maxHeight:150)*/
                 }
                 .padding(.horizontal,16)
             }
@@ -163,7 +118,7 @@ struct CreateAnnouncementView: View {
                 .border(Color.gray, width: 1)
                 .cornerRadius(5.0)
             Button("Create Announcement") {
-                announcementManager.addAnnouncement(title: title, content: content, clubid: clubid)
+                vm.addAnnouncement(title: title, content: content, clubid: clubid)
                 presentationMode.wrappedValue.dismiss()
             }
             .padding()
@@ -210,5 +165,5 @@ struct CreateAnnouncementView: View {
 
 #Preview {
     //HomeView()
-    CreateAnnouncementView(announcementManager: AnnouncementManager())
+    CreateAnnouncementView(vm: AnnouncementViewModel())
 }

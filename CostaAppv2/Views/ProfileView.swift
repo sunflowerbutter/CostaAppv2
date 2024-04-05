@@ -66,7 +66,7 @@ struct ProfileView: View {
                 }
                 
                 Text("Example Name")
-                    .font(.largeTitle)
+                    .font(.title)
                     .bold()
                 
                 // Additional details
@@ -79,7 +79,7 @@ struct ProfileView: View {
                 // Bell Schedule Display
                 VStack(spacing: 10) {
                     Text(currentScheduleTitle)
-                        .font(.headline)
+                        .font(.title2)
                         .padding(.horizontal)
                         .multilineTextAlignment(.center)
                     

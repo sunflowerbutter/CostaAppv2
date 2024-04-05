@@ -11,116 +11,81 @@ import FirebaseCore
 
 
 struct ContentView: View {
-
-    @State private var isLoggedIn: Bool = false
-    var body: some View {
-        mainAppView()
+    @State private var selectedTab : Tab = .house
+    //hide natural tab bar
+    init() {
+        UITabBar.appearance().isHidden = true
     }
-        func mainAppView() -> some View {
-        ZStack {
-            TabView {
-                HomeView()
-                    .tabItem {
-                        Image("home_icon")
-                        Text("Home")
-                    }
-                
-                ClubsView()
-                    .tabItem {
-                        Image("clubs_icon")
-                        Text("Clubs")
-                    }
-                
-                ProfileView()
-                    .tabItem {
-                        Image("profile_icon")
-                        Text("Profile")
-                    }
-            }
-            
-            VStack {
-                Spacer()
-                Divider()
-                    .padding(.bottom, 55)
-            }
-        }
-    }
-}
-
-
-
-struct CustomTabBar: View {
-    @Binding var selectedTab: String
-    @Binding var showCamera: Bool
-    
     var body: some View {
-        HStack {
-            TabBarButton(imageName: "home_icon", text: "Home", selectedTab: $selectedTab, assignedTab: "home")
-            TabBarButton(imageName: "clubs_icon", text: "Clubs", selectedTab: $selectedTab, assignedTab: "clubs")
-            Button(action: {
-                withAnimation {
-                    showCamera.toggle()
+        ZStack{
+            VStack{
+                TabView(selection: $selectedTab){
+                    ForEach(Tab.allCases, id:\.rawValue){ tab in
+                        HStack{
+                            if (tab.rawValue == "house"){
+                                HomeView()
+                            }
+                            else if (tab.rawValue == "archivebox"){
+                                ClubListView()
+                            }
+                            else if (tab.rawValue == "person"){
+                                ProfileView()
+                            }
+                        }
+                        .tag(tab)
+                    }
                 }
-            }) {
-                Image("plus_icon")
             }
-            TabBarButton(imageName: "profile_icon", text: "Profile", selectedTab: $selectedTab, assignedTab: "profile")
+            VStack{
+                Spacer()
+                CustomTabBar(selectedTab: $selectedTab)
+            }
         }
     }
-}
-
-struct TabBarButton: View {
-    var imageName: String
-    var text: String
-    @Binding var selectedTab: String
-    var assignedTab: String
     
-    var body: some View {
-        Button(action: {
-            selectedTab = assignedTab
-        }) {
-            VStack {
-                Image(imageName)
-                Text(text)
+}
+
+enum Tab: String, CaseIterable{
+    case house
+    case archivebox
+    case person
+}
+
+struct CustomTabBar: View{
+    @Binding var selectedTab: Tab
+    private var fillImage: String{
+        selectedTab.rawValue+".fill"
+    }
+    var body: some View{
+        VStack{
+            HStack{
+                ForEach(Tab.allCases, id:\.rawValue){ tab in
+                    Spacer()
+                    Image(systemName: selectedTab == tab ? fillImage : tab.rawValue)
+                        .scaleEffect(selectedTab == tab ? 1.25 : 1.0)
+                        .foregroundColor(selectedTab == tab ? .green : .gray)
+                        .font(.system(size: 22))
+                        .onTapGesture{
+                            withAnimation(.easeIn(duration: 0.1)){
+                                selectedTab = tab
+                            }
+                        }
+                    Spacer()
+                }
             }
+            .frame(width: nil, height:60)
+            .background(.thinMaterial)
+            .cornerRadius(10)
+            .padding()
         }
     }
 }
-
-
-struct PageView: View {
-    let number: Int
-
-    var body: some View {
-        VStack {
-            Text("\(number)")
-                .font(.system(size: 200))
-                .padding()
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color(UIColor.systemBackground))
-        .edgesIgnoringSafeArea(.all)
-    }
-}
-
 
 struct ContentView_Previews: PreviewProvider {
-    @State static var simulatedIsLoggedIn = false
+    //@State static var simulatedIsLoggedIn = false
 
     static var previews: some View {
         ContentView()
     }
 }
 
-
-/*
-struct CameraViewControllerWrapper: UIViewControllerRepresentable {
-    typealias UIViewControllerType = CameraView
-
-    func makeUIViewController(context: Context) -> CameraView {
-        return CameraView()
-    }
-
-    func updateUIViewController(_ uiViewController: CameraView, context: Context) {}
-}
-*/
