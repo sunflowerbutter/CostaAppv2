@@ -1,36 +1,15 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @State private var currentDate = Date()
-    @State private var isImagePickerPresented = false
+    @ObservedObject var uservm = UserViewModel()
+    @ObservedObject var vm = ScheduleViewModel()
+    
     @State private var profileImage: Image?
+    @State private var isImagePickerPresented = false
     @State private var inputImage: UIImage?
     @State private var userName: String = "Example Name"
     
     let timer = Timer.publish(every: 60, on: .main, in: .common).autoconnect()
-    
-    var currentDayOfWeek: String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE" // Day name format
-        return dateFormatter.string(from: currentDate).lowercased()
-    }
-    
-    var currentSchedule: BellSchedule {
-        let allSchedules = getSchedules()
-        if currentDayOfWeek == "tuesday" || currentDayOfWeek == "thursday" {
-            return allSchedules["Office Hours"]!
-        } else {
-            return allSchedules["Regular"]!
-        }
-    }
-    
-    var currentScheduleTitle: String {
-        if currentDayOfWeek == "tuesday" || currentDayOfWeek == "thursday" {
-            return "Office Hours Schedule\n(Tuesday/Thursday with Homeroom)"
-        } else {
-            return "Regular Schedule (Monday/Wednesday/Friday)"
-        }
-    }
     
     var body: some View {
         ScrollView {
@@ -78,12 +57,12 @@ struct ProfileView: View {
                 
                 // Bell Schedule Display
                 VStack(spacing: 10) {
-                    Text(currentScheduleTitle)
+                    Text(vm.scheduleTitle)
                         .font(.title2)
                         .padding(.horizontal)
                         .multilineTextAlignment(.center)
                     
-                    ForEach(currentSchedule.getArray()) { period in
+                    ForEach(vm.currentSchedule.getArray()) { period in
                         scheduleRow(period: period)
                     }
                 }
@@ -118,7 +97,7 @@ struct ProfileView: View {
     
     func scheduleRow(period: Period) -> some View {
         HStack {
-            Text(period.description)
+            Text(period.id)
                 .lineLimit(1)
                 .frame(width: 80, alignment: .leading)
                 .font(.system(size: 12))
@@ -137,15 +116,15 @@ struct ProfileView: View {
                     .frame(width: 60, alignment: .leading)
                     .font(.system(size: 12))
                 }
-                if checkTimeLeft(period:period).contains("Time Left"){
-                    Text(checkTimeLeft(period:period))
+            if vm.checkTimeLeft(period:period).contains("Time Left"){
+                Text(vm.checkTimeLeft(period:period))
                         .foregroundColor(.red)
                         .lineLimit(1)
                         .frame(minWidth: 100, alignment: .trailing)
                         .font(.system(size: 12))
                 }
                 else{
-                    Text(checkTimeLeft(period:period))
+                    Text(vm.checkTimeLeft(period:period))
                         .foregroundColor(.gray)
                         .lineLimit(1)
                         .frame(width: 90, alignment: .trailing)
@@ -155,27 +134,6 @@ struct ProfileView: View {
             }
                 .padding(.horizontal, 10)
                 //.background(isTimeNow(in: schedule) ? Color.yellow.opacity(0.3) : Color.clear) // Highlight logic
-    }
-    
-    func checkTimeLeft(period: Period) -> String{
-        let startTime = period.startTimeDate
-        let endTime = period.endTimeDate
-        let currentComponents = Calendar.current.dateComponents([.hour, .minute], from: currentDate)
-        let startComponents = Calendar.current.dateComponents([.hour, .minute], from: startTime)
-        let endComponents = Calendar.current.dateComponents([.hour, .minute], from: endTime)
-        let currentMinutes = currentComponents.minute! + (currentComponents.hour!*60)
-        let startMinutes = startComponents.minute! + (startComponents.hour!*60)
-        let endMinutes = endComponents.minute! + (endComponents.hour!*60)
-        
-        if currentMinutes>endMinutes{
-            return "Ended"
-        }
-        else if currentMinutes>startMinutes && currentMinutes<endMinutes{
-            return "Time Left: \(endMinutes-currentMinutes)m"
-        }
-        else{
-            return "Upcoming"
-        }
     }
      
     
