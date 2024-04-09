@@ -9,8 +9,6 @@ import SwiftUI
 
 struct AnnouncementView: View {
     var announcement: Announcement
-    /*test
-    var announcement = Announcement(title: "title", content: "content", clubid: "clubid")*/
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -31,9 +29,9 @@ struct AnnouncementView: View {
         .padding(.vertical, 8)
     }
 }
-/*
+
 #Preview {
-    AnnouncementView()
+    AnnouncementView(announcement: Announcement(title: "title", content: "content", clubid: "clubid"))
 }
 
-*/
+

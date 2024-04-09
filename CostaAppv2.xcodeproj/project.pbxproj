@@ -13,7 +13,6 @@
 		D40F460A2B8712340043A4D7 /* Checklist.md in Resources */ = {isa = PBXBuildFile; fileRef = D40F46092B8712340043A4D7 /* Checklist.md */; };
 		D40F460E2B8716490043A4D7 /* AnnouncementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40F460D2B8716490043A4D7 /* AnnouncementView.swift */; };
 		D40F46102B8716510043A4D7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40F460F2B8716510043A4D7 /* HomeView.swift */; };
-		D40F46122B8716580043A4D7 /* HomepageOGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40F46112B8716580043A4D7 /* HomepageOGView.swift */; };
 		D40F46142B8716600043A4D7 /* ImagePickerProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40F46132B8716600043A4D7 /* ImagePickerProfileView.swift */; };
 		D40F46162B87168C0043A4D7 /* ClubListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40F46152B87168C0043A4D7 /* ClubListView.swift */; };
 		D44126FE2BB257DF0033D8E0 /* ClubViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44126FD2BB257DF0033D8E0 /* ClubViewModel.swift */; };
@@ -62,7 +61,6 @@
 		D40F46092B8712340043A4D7 /* Checklist.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Checklist.md; sourceTree = "<group>"; };
 		D40F460D2B8716490043A4D7 /* AnnouncementView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnouncementView.swift; sourceTree = "<group>"; };
 		D40F460F2B8716510043A4D7 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		D40F46112B8716580043A4D7 /* HomepageOGView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomepageOGView.swift; sourceTree = "<group>"; };
 		D40F46132B8716600043A4D7 /* ImagePickerProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerProfileView.swift; sourceTree = "<group>"; };
 		D40F46152B87168C0043A4D7 /* ClubListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubListView.swift; sourceTree = "<group>"; };
 		D44126FD2BB257DF0033D8E0 /* ClubViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubViewModel.swift; sourceTree = "<group>"; };
@@ -119,7 +117,6 @@
 			isa = PBXGroup;
 			children = (
 				D40F46132B8716600043A4D7 /* ImagePickerProfileView.swift */,
-				D40F46112B8716580043A4D7 /* HomepageOGView.swift */,
 				D40F460F2B8716510043A4D7 /* HomeView.swift */,
 				D40F460D2B8716490043A4D7 /* AnnouncementView.swift */,
 				D4BD94E02BACB75B0021413E /* AnnouncementViewModel.swift */,
@@ -360,7 +357,6 @@
 				D40F46162B87168C0043A4D7 /* ClubListView.swift in Sources */,
 				D40F46142B8716600043A4D7 /* ImagePickerProfileView.swift in Sources */,
 				D4BD94DF2BA38C5C0021413E /* ContentViewModel.swift in Sources */,
-				D40F46122B8716580043A4D7 /* HomepageOGView.swift in Sources */,
 				D4EAFEAF2B87E2170016F103 /* Schedule.swift in Sources */,
 				D4CADC2A2B8706AA00B210A1 /* CostaAppv2App.swift in Sources */,
 			);
