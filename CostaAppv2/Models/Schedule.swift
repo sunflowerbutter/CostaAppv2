@@ -38,7 +38,7 @@ class BellSchedule: Identifiable {
     }
     
     init(){
-        self.id = "defaultid"
+        self.id = "default"
         self.periods = [Period(id: "Period 0", startTime: "7:30 AM", endTime: "8:25 AM", length: "55 min")]
     }
     

@@ -42,3 +42,5 @@ camera scan
 configure in app messaging with firebase analytics
 
 https://www.hackingwithswift.com/quick-start/swiftui/all-swiftui-property-wrappers-explained-and-compared
+
+- https://dribbble.com/shots/17034731-Mood-Diary-App

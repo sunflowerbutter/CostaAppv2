@@ -24,12 +24,69 @@ class UserViewModel: ObservableObject {
 
 class ScheduleViewModel: ObservableObject {
     @Published var schedules = [BellSchedule]()
-    @Published var currentSchedule = BellSchedule()
+    @Published var currentSchedule = [Period]()
     @Published var scheduleTitle: String = ""
     @Published var currentDate = Date()
     
     private var db = Firestore.firestore()
     
+    
+    func fetchData(){
+        var currentDayOfWeek: String {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "EEEE" // Day name format
+            return dateFormatter.string(from: currentDate).lowercased()
+        }
+        if currentDayOfWeek == "tuesday" || currentDayOfWeek == "thursday" {
+            let schedules = db.collection("Schedules")
+            schedules.whereField("title", isEqualTo: "Office Hours").getDocuments { (snapshot, error) in
+                if let snapshot = snapshot {
+                    for document in snapshot.documents {
+                        let data = document.data()
+                        let title = document.documentID
+                        let periodmap = data["Periods"] as? [[String:String]] ?? [["":""]]
+                        var periods = [Period]()
+                        for period in periodmap{
+                            let description = period["Description"] ?? ""
+                            let startTime = period["Start Time"] ?? ""
+                            let endTime = period["End Time"] ?? ""
+                            let length = period["Length"] ?? ""
+
+                            let period = Period(id: description, startTime: startTime, endTime: endTime, length: length)
+                            periods.append(period)
+                        }
+                        let schedule = BellSchedule(id: title, periods: periods)
+                        self.currentSchedule = schedule.getArray()
+                    }
+                }
+            }
+        }
+        else{
+            let schedules = db.collection("Schedules")
+            schedules.whereField("title", isEqualTo: "Regular").getDocuments { (snapshot, error) in
+                if let snapshot = snapshot {
+                    for document in snapshot.documents {
+                        let data = document.data()
+                        let title = document.documentID
+                        let periodmap = data["Periods"] as? [[String:String]] ?? [["":""]]
+                        var periods = [Period]()
+                        for period in periodmap{
+                            let description = period["Description"] ?? ""
+                            let startTime = period["Start Time"] ?? ""
+                            let endTime = period["End Time"] ?? ""
+                            let length = period["Length"] ?? ""
+
+                            let period = Period(id: description, startTime: startTime, endTime: endTime, length: length)
+                            periods.append(period)
+                        }
+                        let schedule = BellSchedule(id: title, periods: periods)
+                        self.currentSchedule = schedule.getArray()
+                    }
+                }
+            }
+        }
+    }
+    /*
     func fetchData(){
         db.collection("Schedules").getDocuments { (snapshot, error) in
             if let snapshot = snapshot {
@@ -39,31 +96,32 @@ class ScheduleViewModel: ObservableObject {
                     let periodmap = data["Periods"] as? [[String:String]] ?? [["":""]]
                     var periods = [Period]()
                     for period in periodmap{
-                        let description = period["description"] ?? ""
-                        let startTime = period["startTime"] ?? ""
-                        let endTime = period["endTime"] ?? ""
-                        let length = period["length"] ?? ""
+                        let description = period["Description"] ?? ""
+                        let startTime = period["Start Time"] ?? ""
+                        let endTime = period["End Time"] ?? ""
+                        let length = period["Length"] ?? ""
 
                         let period = Period(id: description, startTime: startTime, endTime: endTime, length: length)
                         periods.append(period)
                     }
                     
-                    let schedule = BellSchedule(id: title, periods: periods)
+                    let schedule = BellSchedule(title: title, periods: periods)
                     self.schedules.append(schedule)
                 }
             }
         }
     }
-    
+    */
+    /*
     func getCurrentSchedule(){
-        var currentDayOfWeek: String {
+        /*var currentDayOfWeek: String {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "EEEE" // Day name format
             return dateFormatter.string(from: currentDate).lowercased()
         }
         if currentDayOfWeek == "tuesday" || currentDayOfWeek == "thursday" {
             for schedule in schedules{
-                if schedule.id == "Office Hours"{
+                if schedule.title == "Office Hours"{
                     currentSchedule = schedule
                     scheduleTitle = "Office Hours Schedule\n(Tuesday/Thursday with Homeroom)"
                 }
@@ -71,13 +129,14 @@ class ScheduleViewModel: ObservableObject {
         }
         else{
             for schedule in schedules{
-                if schedule.id == "Regular"{
+                if schedule.title == "Regular"{
                     currentSchedule = schedule
                     scheduleTitle = "Regular Schedule (Monday/Wednesday/Friday)"
                 }
             }
-        }
-    }
+        }*/
+        currentSchedule = schedules[0].getArray()
+    }*/
     
     func checkTimeLeft(period: Period) -> String{
         let startTime = period.startTimeDate
