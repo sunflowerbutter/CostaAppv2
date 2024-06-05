@@ -12,33 +12,36 @@ import FirebaseCore
 
 struct ContentView: View {
     @State private var selectedTab : Tab = .house
+    @State private var goToContent : Bool = false
     //hide natural tab bar
     init() {
         UITabBar.appearance().isHidden = true
     }
     var body: some View {
-        ZStack{
-            VStack{
-                TabView(selection: $selectedTab){
-                    ForEach(Tab.allCases, id:\.rawValue){ tab in
-                        HStack{
-                            if (tab.rawValue == "house"){
-                                HomeView()
+        NavigationStack{
+            ZStack{
+                VStack{
+                    TabView(selection: $selectedTab){
+                        ForEach(Tab.allCases, id:\.rawValue){ tab in
+                            HStack{
+                                if (tab.rawValue == "house"){
+                                    HomeView()
+                                }
+                                else if (tab.rawValue == "archivebox"){
+                                    ClubListView()
+                                }
+                                else if (tab.rawValue == "person"){
+                                    ProfileView()
+                                }
                             }
-                            else if (tab.rawValue == "archivebox"){
-                                ClubListView()
-                            }
-                            else if (tab.rawValue == "person"){
-                                ProfileView()
-                            }
+                            .tag(tab)
                         }
-                        .tag(tab)
                     }
                 }
-            }
-            VStack{
-                Spacer()
-                CustomTabBar(selectedTab: $selectedTab)
+                VStack{
+                    Spacer()
+                    CustomTabBar(selectedTab: $selectedTab)
+                }
             }
         }
     }

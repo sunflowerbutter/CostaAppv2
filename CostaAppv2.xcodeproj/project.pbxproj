@@ -31,6 +31,7 @@
 		D4CADC5D2B8708E500B210A1 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = D4CADC5C2B8708E500B210A1 /* FirebaseAuth */; };
 		D4CADC5F2B8708E500B210A1 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D4CADC5E2B8708E500B210A1 /* FirebaseFirestore */; };
 		D4CADC612B8708E500B210A1 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D4CADC602B8708E500B210A1 /* FirebaseFirestoreSwift */; };
+		D4D31BA52BCA45BE00565FFC /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D31BA42BCA45BE00565FFC /* StartView.swift */; };
 		D4EAFEAB2B87E1DD0016F103 /* Announcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EAFEAA2B87E1DD0016F103 /* Announcement.swift */; };
 		D4EAFEAD2B87E2110016F103 /* Club.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EAFEAC2B87E2110016F103 /* Club.swift */; };
 		D4EAFEAF2B87E2170016F103 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EAFEAE2B87E2170016F103 /* Schedule.swift */; };
@@ -135,6 +136,7 @@
 		D4CADC442B8706AC00B210A1 /* CostaAppv2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostaAppv2UITests.swift; sourceTree = "<group>"; };
 		D4CADC462B8706AC00B210A1 /* CostaAppv2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostaAppv2UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D4CADC552B87081400B210A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D4D31BA42BCA45BE00565FFC /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		D4EAFEAA2B87E1DD0016F103 /* Announcement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Announcement.swift; sourceTree = "<group>"; };
 		D4EAFEAC2B87E2110016F103 /* Club.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Club.swift; sourceTree = "<group>"; };
 		D4EAFEAE2B87E2170016F103 /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 				D40F45FE2B87100C0043A4D7 /* Views */,
 				D4CADC292B8706AA00B210A1 /* CostaAppv2App.swift */,
 				D4CADC2B2B8706AA00B210A1 /* ContentView.swift */,
+				D4D31BA42BCA45BE00565FFC /* StartView.swift */,
 				D4BD94DE2BA38C5B0021413E /* ContentViewModel.swift */,
 				D4CADC2D2B8706AC00B210A1 /* Assets.xcassets */,
 				D4CADC2F2B8706AC00B210A1 /* Preview Content */,
@@ -517,6 +520,7 @@
 				D40F46082B8712190043A4D7 /* ProfileView.swift in Sources */,
 				D4CADC2C2B8706AA00B210A1 /* ContentView.swift in Sources */,
 				D4F006822BC8ECC200C9D1D3 /* TestView.swift in Sources */,
+				D4D31BA52BCA45BE00565FFC /* StartView.swift in Sources */,
 				D40F46002B87101F0043A4D7 /* WelcomeView.swift in Sources */,
 				D4EAFEAD2B87E2110016F103 /* Club.swift in Sources */,
 				D40F46162B87168C0043A4D7 /* ClubListView.swift in Sources */,

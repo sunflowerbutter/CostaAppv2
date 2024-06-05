@@ -1,24 +1,16 @@
 //
-//  TestView.swift
+//  StartView.swift
 //  CostaAppv2
 //
-//  Created by HCD Student on 4/11/24.
+//  Created by HCD Student on 4/12/24.
 //
 
 import SwiftUI
-import Foundation
 
-struct TestView: View {
-    /*
-    init(){
-        for family in UIFont.familyNames {
-             print(family)
-             for names in UIFont.fontNames(forFamilyName: family){
-             print("== \(names)")
-             }
-        }
-    }*/
-    var body: some View{
+struct StartView: View {
+    @State var goToContent:Bool = false
+    
+    var body: some View {
         VStack(spacing: 10) {
             Image("CostaTitle")
                 .resizable()
@@ -62,7 +54,7 @@ struct TestView: View {
                         .background(Color(hex: "D5E2C0"))
                         .cornerRadius(15)
                     }
-                    Button(action: {print("pressed")}){
+                    Button(action: {goToContent = true}){
                         Text("ENTER")
                             .font(Font.custom("Poppins", size: 20).weight(.bold))
                             .foregroundColor(Color(red: 0.91, green: 0.45, blue: 0.38))
@@ -81,20 +73,5 @@ struct TestView: View {
 }
 
 #Preview {
-    TestView()
-}
-
-extension Color {
-    init(hex: String) {
-        var cleanHexCode = hex.trimmingCharacters(in: .whitespacesAndNewlines)
-        cleanHexCode = cleanHexCode.replacingOccurrences(of: "#", with: "")
-        var rgb: UInt64 = 0
-        
-        Scanner(string: cleanHexCode).scanHexInt64(&rgb)
-        
-        let redValue = Double((rgb >> 16) & 0xFF) / 255.0
-        let greenValue = Double((rgb >> 8) & 0xFF) / 255.0
-        let blueValue = Double(rgb & 0xFF) / 255.0
-        self.init(red: redValue, green: greenValue, blue: blueValue)
-    }
+    StartView()
 }
